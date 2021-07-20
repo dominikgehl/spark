@@ -259,7 +259,7 @@ class _ClassificationSummary(JavaWrapper):
     @since("3.1.0")
     def predictions(self):
         """
-        Dataframe outputted by the model's `transform` method.
+        :py:class:`pyspark.sql.DataFrame` outputted by the model's `transform` method.
         """
         return self._call_java("predictions")
 
@@ -445,7 +445,7 @@ class _BinaryClassificationSummary(_ClassificationSummary):
     def roc(self):
         """
         Returns the receiver operating characteristic (ROC) curve,
-        which is a Dataframe having two fields (FPR, TPR) with
+        which is a :py:class:`pyspark.sql.DataFrame` having two fields (FPR, TPR) with
         (0.0, 0.0) prepended and (1.0, 1.0) appended to it.
 
         .. versionadded:: 3.1.0
@@ -469,7 +469,7 @@ class _BinaryClassificationSummary(_ClassificationSummary):
     @since("3.1.0")
     def pr(self):
         """
-        Returns the precision-recall curve, which is a Dataframe
+        Returns the precision-recall curve, which is a :py:class:`pyspark.sql.DataFrame`
         containing two fields recall, precision with (0.0, 1.0) prepended
         to it.
         """
@@ -479,7 +479,7 @@ class _BinaryClassificationSummary(_ClassificationSummary):
     @since("3.1.0")
     def fMeasureByThreshold(self):
         """
-        Returns a dataframe with two fields (threshold, F-Measure) curve
+        Returns a :py:class:`pyspark.sql.DataFrame` with two fields (threshold, F-Measure) curve
         with beta = 1.0.
         """
         return self._call_java("fMeasureByThreshold")
@@ -488,7 +488,7 @@ class _BinaryClassificationSummary(_ClassificationSummary):
     @since("3.1.0")
     def precisionByThreshold(self):
         """
-        Returns a dataframe with two fields (threshold, precision) curve.
+        Returns a :py:class:`pyspark.sql.DataFrame` with two fields (threshold, precision) curve.
         Every possible probability obtained in transforming the dataset
         are used as thresholds used in calculating the precision.
         """
@@ -498,7 +498,7 @@ class _BinaryClassificationSummary(_ClassificationSummary):
     @since("3.1.0")
     def recallByThreshold(self):
         """
-        Returns a dataframe with two fields (threshold, recall) curve.
+        Returns a :py:class:`pyspark.sql.DataFrame` with two fields (threshold, recall) curve.
         Every possible probability obtained in transforming the dataset
         are used as thresholds used in calculating the recall.
         """
